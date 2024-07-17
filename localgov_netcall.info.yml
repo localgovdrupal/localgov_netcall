@@ -1,0 +1,5 @@
+type: module
+name: LocalGov Netcall
+description: Netcall integration.
+package: LocalGov Drupal
+core_version_requirement: '>=10'

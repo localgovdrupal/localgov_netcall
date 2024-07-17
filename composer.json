@@ -1,0 +1,7 @@
+{
+    "name": "localgovdrupal/localgov_netcall",
+    "description": "Drupal module for Netcall Low-code platform integration.",
+    "type": "drupal-module",
+    "homepage": "https://github.com/localgovdrupal/localgov_netcall",
+    "license": "GPL-2.0-or-later"
+}
