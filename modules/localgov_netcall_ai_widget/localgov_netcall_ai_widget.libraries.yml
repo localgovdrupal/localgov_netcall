@@ -1,0 +1,10 @@
+ai-widget-init:
+  js:
+    js/ai-widget-init.js: {}
+  header: true
+
+ai-widget:
+  js:
+    js/ai-widget.js: {}
+  dependencies:
+    - localgov_netcall_ai_widget/ai-widget-init

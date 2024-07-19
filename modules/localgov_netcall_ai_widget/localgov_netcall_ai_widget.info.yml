@@ -1,0 +1,5 @@
+name: 'LocalGov Netcall AI Widget'
+type: module
+description: 'Adds the Netcall AI widget to your website.'
+package: LocalGov Drupal
+core_version_requirement: ^10 || ^11

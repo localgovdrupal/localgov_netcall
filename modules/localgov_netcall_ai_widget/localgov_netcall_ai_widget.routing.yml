@@ -1,0 +1,7 @@
+localgov_netcall_ai_widget.settings:
+  path: 'admin/config/services/netcall/ai-widget'
+  defaults:
+    _title: 'Netcall AI Widget Settings'
+    _form: 'Drupal\localgov_netcall_ai_widget\Form\SettingsForm'
+  requirements:
+    _permission: 'Administer Netcall AI Widget'

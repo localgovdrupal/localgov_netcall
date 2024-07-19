@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for LocalGov Netcall AI Widget module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function localgov_netcall_ai_widget_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'localgov_netcall_ai_widget/ai-widget-init';
+  $variables['#attached']['library'][] = 'localgov_netcall_ai_widget/ai-widget';
+}

@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Content Access module.
+localgov_netcall_ai_widget.settings:
+  type: config_object
+  label: 'Netcall AI Widget settings'
+  mapping:
+    roles:
+      type: checkboxes
+      label: 'Roles'
