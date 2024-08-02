@@ -73,6 +73,30 @@ final class SettingsForm extends ConfigFormBase {
       '#default_value' => $this->config('localgov_netcall_ai_widget.settings')->get('partition_id'),
       '#description' => $this->t('The partition ID for the Netcall AI Widget.'),
     ];
+    // Add textarea for extra pages to override the default
+    $form['partition_overrides'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Partition Overrides'),
+      '#default_value' => $this->config('localgov_netcall_ai_widget.settings')->get('partition_overrides'),
+      '#description' => $this->t('
+        <p>Add overrides here, in the format of <strong>partition_id|path</strong>, one per line.</p>
+        <p>For example:</p>
+        <ul>
+          <li>123|/news</li>
+          <li>123|/news/*</li>
+          <li>456|/events</li>
+          <li>789|services/*</li>
+        </ul>
+        <p>
+          The above will mean that partition <strong>123</strong> will be used
+          on the <strong>/news</strong> page and also any other pages under
+          <strong>news</strong>, and partition <strong>456</strong> will be used
+          on the <strong>/events</strong> page <em>only</em>, and
+          <strong>789</strong> will appear on all pages under
+          <strong>/services</strong> <em>but not</em> services itself.
+        </p>
+      '),
+    ];
     return parent::buildForm($form, $form_state);
   }
 
@@ -83,6 +107,7 @@ final class SettingsForm extends ConfigFormBase {
     $this->config('localgov_netcall_ai_widget.settings')
       ->set('workspace_id', $form_state->getValue('workspace_id'))
       ->set('partition_id', $form_state->getValue('partition_id'))
+      ->set('partition_overrides', $form_state->getValue('partition_overrides'))
       ->save();
     parent::submitForm($form, $form_state);
   }

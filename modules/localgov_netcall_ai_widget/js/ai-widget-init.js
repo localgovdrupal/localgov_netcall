@@ -8,6 +8,13 @@
 (function netcallAiWidgetInitScript(Drupal, drupalSettings) {
   Drupal.behaviors.netcallAiWidgetInit = {
     attach: function (context) {
+
+      let workspace_id = drupalSettings.localgovNetcall.aiWigdetWorkspaceId;
+      let partition_id = drupalSettings.localgovNetcall.aiWigdetPartitionId;
+
+      // @todo: check the path of the page, and re-assign the partition_id if needed.
+      // partition overrides are available in aiWigdetPartitionOverrides
+
       "use strict";
       (function () {
         const t = [],
@@ -53,7 +60,7 @@
         o.addEventListener("load", a),
           o.open(
             "GET",
-            `https://webassist.netcall-apollo-dev.co.uk/api/v1/loader/workspaces/${WORKSPACEIDHERE}/definitions/${PARTITIONIDHERE}`,
+            `https://webassist.netcall-apollo-dev.co.uk/api/v1/loader/workspaces/${workspace_id}/definitions/${partition_id}`,
             !0
           ),
           (o.responseType = "json"),
