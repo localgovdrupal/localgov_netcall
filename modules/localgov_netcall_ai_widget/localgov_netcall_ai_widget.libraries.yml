@@ -4,6 +4,7 @@ ai-widget-init:
   header: true
   dependencies:
     - core/drupal
+    - core/drupalSettings
 
 ai-widget:
   js:
