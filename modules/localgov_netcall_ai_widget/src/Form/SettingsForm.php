@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\localgov_netcall_ai_widget\Form;
 
@@ -73,7 +73,7 @@ final class SettingsForm extends ConfigFormBase {
       '#default_value' => $this->config('localgov_netcall_ai_widget.settings')->get('partition_id'),
       '#description' => $this->t('The partition ID for the Netcall AI Widget.'),
     ];
-    // Add textarea for extra pages to override the default
+    // Add textarea for extra pages to override the default.
     $form['partition_overrides'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Partition Overrides'),
