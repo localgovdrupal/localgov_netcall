@@ -89,7 +89,7 @@ class HtmlResponseSubscriber implements EventSubscriberInterface {
    */
   public static function transformRootRelativeUrlsToAbsolute(\DOMDocument $html_dom, $scheme_and_host): \DOMDocument {
 
-    $xpath = new \DOMXpath($html_dom);
+    $xpath = new \DOMXPath($html_dom);
 
     $uriAttributes = [
       'href', 'poster', 'src', 'cite', 'data',
