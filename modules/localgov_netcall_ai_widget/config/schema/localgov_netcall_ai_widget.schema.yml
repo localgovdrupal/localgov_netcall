@@ -12,5 +12,3 @@ localgov_netcall_ai_widget.settings:
     partition_overrides:
       type: text
       label: 'Partition Overrides'
-
-
