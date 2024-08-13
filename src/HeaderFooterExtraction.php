@@ -40,7 +40,7 @@ class HeaderFooterExtraction {
     }
     $header = self::toHtml($html_dom, $header_list->item(0));
 
-    $xpath         = new \DOMXpath($html_dom);
+    $xpath         = new \DOMXPath($html_dom);
     $head_scripts  = self::extractHeadScripts($html_dom, $xpath);
     $other_scripts = self::extractPreHeaderScripts($html_dom, $xpath);
 
@@ -75,7 +75,7 @@ class HeaderFooterExtraction {
 
     $footer = self::toHtml($html_dom, $footer_list->item(0));
 
-    $xpath = new \DOMXpath($html_dom);
+    $xpath = new \DOMXPath($html_dom);
     $other_scripts = self::extractPostFooterScripts($html_dom, $xpath);
 
     $result = $footer . PHP_EOL . $other_scripts;
@@ -97,7 +97,7 @@ class HeaderFooterExtraction {
 
     $stylesheet_urls = [];
 
-    $xpath = new \DOMXpath($html_dom);
+    $xpath = new \DOMXPath($html_dom);
     $tags = $xpath->query('/html/head/link[@rel="stylesheet"]');
     foreach ($tags as $dom_node) {
       $stylesheet_urls[] = $dom_node->getAttribute('href');

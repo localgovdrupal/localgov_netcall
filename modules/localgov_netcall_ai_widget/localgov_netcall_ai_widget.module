@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for LocalGov Netcall AI Widget module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function localgov_netcall_ai_widget_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'localgov_netcall_ai_widget/ai-widget-init';
+  $variables['#attached']['library'][] = 'localgov_netcall_ai_widget/ai-widget';
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function localgov_netcall_ai_widget_page_attachments(array &$attachments) {
+  $config = \Drupal::config('localgov_netcall_ai_widget.settings');
+  $woskpace_id = $config->get('workspace_id');
+  $partition_id = $config->get('partition_id');
+  $partition_overrides = $config->get('partition_overrides');
+
+  // Attach the configuration to drupalSettings.
+  $attachments['#attached']['drupalSettings']['localgovNetcall'] = [
+    'aiWigdetWorkspaceId' => $woskpace_id,
+    'aiWigdetPartitionId' => $partition_id,
+    'aiWigdetPartitionOverrides' => $partition_overrides,
+  ];
+}
