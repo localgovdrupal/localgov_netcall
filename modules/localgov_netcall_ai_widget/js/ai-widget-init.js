@@ -96,7 +96,7 @@
         o.addEventListener('load', a),
           o.open(
             'GET',
-            `https://webassist.netcall-apollo-dev.co.uk/api/v1/loader/workspaces/${workspaceId}/definitions/${partitionId}`,
+            `https://webassist.onconverse.app/api/v1/loader/workspaces/${workspaceId}/definitions/${partitionId}`,
             !0,
           ),
           (o.responseType = 'json'),
