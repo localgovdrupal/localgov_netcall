@@ -1,6 +1,8 @@
-name: 'LocalGov Netcall AI Widget'
+name: 'Deprecated: LocalGov Netcall AI Widget'
 type: module
-description: 'Adds the Netcall AI widget to your website.'
+description: 'Please use the Drupal.org version of this module. Adds the Netcall AI widget to your website.'
 package: LocalGov Drupal
 core_version_requirement: ^10 || ^11
 configure: localgov_netcall_ai_widget.settings
+lifecycle: deprecated
+lifecycle_link: 'https://github.com/localgovdrupal/localgov_netcall/issues/11'
